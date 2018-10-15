@@ -1,27 +1,65 @@
 # Modaltest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+para inicializar lo componentes de bootrstap en Angular segir las las instrocciones de este link
 
-## Development server
+https://ng-bootstrap.github.io/#/getting-started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# 1. inatalacion componentes Bootstrap 
 
-## Code scaffolding
+Ejecutar el comando:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+``` yarn add @ng-bootstrap/ng-bootstrap ```
 
-## Build
+Una vez instalado importarlo en el app.model.ts
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  declarations: [
+    AppComponent,
+    ...
+  ],
+  imports: [
+    BrowserModule,
+    NgbModule,
+  ],
+  providers: [
 
-## Running end-to-end tests
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+Agregamos nuestro componente al app.moldel.ts y en app.component.ts, para este ejemplo
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+``` import { ModaltestComponent } from './modaltest/modaltest.component'; ```
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Tambien se puede traer solo lo que necesitamos. por ejemplo:
+```
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+
+@NgModule({
+  ...
+  imports: [NgbPaginationModule, NgbAlertModule, ...],
+  ...
+})
+export class YourAppModule {
+}
+
+```
+Aqui ya deberia correr sin estilos bootstrap
+
+# 2. Agregamos estilo bootstrap
+
+En la pagina: https://getbootstrap.com/docs/4.1/getting-started/introduction/
+se copia la linea  ``` <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> ```
+y se pega en el head del index.html del proyecto, ahora de debe de ver mucho mejor!!!
+
+
+
+
+
+
