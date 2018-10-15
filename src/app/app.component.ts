@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModaltestComponent } from './modaltest/modaltest.component';
 
 @Component({
   selector: 'app-root',
